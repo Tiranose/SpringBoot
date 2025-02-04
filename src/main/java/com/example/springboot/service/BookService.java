@@ -1,6 +1,6 @@
-package com.example.bookstore.service;
+package com.example.springboot.service;
 
-import com.example.bookstore.model.Book;
+import com.example.springboot.model.Book;
 import java.util.List;
 
 public interface BookService {
