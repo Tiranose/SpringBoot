@@ -88,14 +88,14 @@
                 <version>3.3.0</version>
                 <executions>
                     <execution>
-                        <phase>validate</phase>
+                        <phase>compile</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
-                    <configLocation>checkstyle.xml</configLocation>
+                    <configLocation>${maven.checkstyle.plugin.configLocation}</configLocation>
                     <consoleOutput>true</consoleOutput>
                     <failsOnError>true</failsOnError>
                     <linkXRef>false</linkXRef>
