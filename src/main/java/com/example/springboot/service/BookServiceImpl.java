@@ -1,8 +1,7 @@
-package com.example.springboot.service.impl;
+package com.example.springboot.service;
 
 import com.example.springboot.model.Book;
 import com.example.springboot.repository.BookRepository;
-import com.example.springboot.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
