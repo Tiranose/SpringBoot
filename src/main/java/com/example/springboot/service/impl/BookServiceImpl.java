@@ -1,4 +1,4 @@
-package com.example.springboot.service.Impl;
+package com.example.springboot.service.impl;
 
 import com.example.springboot.model.Book;
 import com.example.springboot.repository.BookRepository;

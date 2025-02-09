@@ -1,12 +1,12 @@
-package com.example.springboot.repository.Impl;
+package com.example.springboot.repository.impl;
 
 import com.example.springboot.model.Book;
 import com.example.springboot.repository.BookRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
-import org.springframework.stereotype.Repository;
 import java.util.List;
+import org.springframework.stereotype.Repository;
 
 @Repository
 public class BookRepositoryImpl implements BookRepository {
@@ -24,4 +24,3 @@ public class BookRepositoryImpl implements BookRepository {
         return entityManager.createQuery("SELECT b FROM Book b", Book.class).getResultList();
     }
 }
-

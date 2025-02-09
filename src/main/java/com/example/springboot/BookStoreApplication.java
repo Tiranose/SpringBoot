@@ -16,8 +16,12 @@ public class BookStoreApplication {
     @Bean
     public CommandLineRunner run(BookService bookService) {
         return args -> {
-            bookService.save(new Book(null, "Effective Java", "Joshua Bloch", "9780134685991", 40.0, "Best Java book", null));
-            bookService.save(new Book(null, "Clean Code", "Robert C. Martin", "9780132350884", 35.0, "Clean coding practices", null));
+            bookService.save(new Book(null, "Effective Java",
+                    "Joshua Bloch", "9780134685991",
+                    40.0, "Best Java book", null));
+            bookService.save(new Book(null, "Clean Code",
+                    "Robert C. Martin", "9780132350884",
+                    35.0, "Clean coding practices", null));
             bookService.findAll().forEach(System.out::println);
         };
     }
