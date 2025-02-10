@@ -1,13 +1,14 @@
 package com.example.springboot.repository.impl;
 
 import com.example.springboot.model.Book;
+import com.example.springboot.repository.BookRepository;
 import java.util.ArrayList;
 import java.util.List;
-import com.example.springboot.repository.BookRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class BookRepositoryImpl implements BookRepository {
+
     private final List<Book> books = new ArrayList<>();
 
     @Override
