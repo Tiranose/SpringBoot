@@ -1,6 +1,12 @@
 package com.example.springboot.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Column;
+
 import java.math.BigDecimal;
 
 @Entity
@@ -30,7 +36,11 @@ public class Book {
     public Book() {
     }
 
-    public Book(Long id, String title, String author, String isbn, BigDecimal price, String description, String coverImage) {
+    public Book(Long id, String title,
+                String author,
+                String isbn,
+                BigDecimal price,
+                String description, String coverImage) {
         this.id = id;
         this.title = title;
         this.author = author;
