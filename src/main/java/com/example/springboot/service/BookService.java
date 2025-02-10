@@ -9,4 +9,5 @@ public interface BookService {
 
     List<Book> getAllBooks();
     void deleteBook(Long id);
+
 }
