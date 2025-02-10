@@ -4,7 +4,7 @@ import com.example.springboot.model.Book;
 import java.util.List;
 
 public interface BookService {
-    void save(Book book);
-
-    List<Book> findAll();
+    void addBook(Book book);
+    List<Book> getAllBooks();
+    void deleteBook(Long id);
 }
