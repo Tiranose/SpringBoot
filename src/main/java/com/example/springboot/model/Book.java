@@ -1,11 +1,14 @@
 package com.example.springboot.model;
 
-import jakarta.persistence.*;
+import java.math.BigDecimal;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.math.BigDecimal;
 
 @Entity
 @Getter
@@ -23,7 +26,9 @@ public class Book {
     private String description;
     private String coverImage;
 
-    public Book(Long id, String title, String author, String isbn, BigDecimal price, String description, String coverImage) {
+    public Book(Long id, String title, String author,
+                String isbn, BigDecimal price,
+                String description, String coverImage) {
         this.id = id;
         this.title = title;
         this.author = author;
