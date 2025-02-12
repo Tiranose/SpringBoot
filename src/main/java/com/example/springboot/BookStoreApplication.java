@@ -2,14 +2,15 @@ package com.example.springboot;
 
 import com.example.springboot.model.Book;
 import com.example.springboot.service.BookService;
-import java.math.BigDecimal;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import java.math.BigDecimal;
 
 @SpringBootApplication
 public class BookStoreApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(BookStoreApplication.class, args);
     }
@@ -17,13 +18,15 @@ public class BookStoreApplication {
     @Bean
     public CommandLineRunner initData(BookService bookService) {
         return args -> {
-            bookService.addBook(new Book(null, "Effective Java",
-                    "Joshua Bloch", "9780134685991",
-                    new BigDecimal("40.0"), "Best Java book", null));
-            bookService.addBook(new Book(null, "Clean Code",
-                    "Robert C. Martin", "9780132350884",
-                    new BigDecimal("35.0"), "Clean coding practices", null));
-            bookService.getAllBooks().forEach(System.out::println);
+            bookService.save(new Book(null, "The Catcher in the Rye",
+                    "J.D. Salinger", "978-0-316-76948-0",
+                    new BigDecimal("10.99"),
+                    "A novel about adolescent alienation", "cover1.jpg"));
+
+            bookService.save(new Book(null, "To Kill a Mockingbird",
+                    "Harper Lee", "978-0-06-112008-4",
+                    new BigDecimal("12.99"),
+                    "A novel about racial injustice", "cover2.jpg"));
         };
     }
 }
