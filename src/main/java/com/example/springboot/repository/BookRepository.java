@@ -9,6 +9,4 @@ public interface BookRepository {
 
     List<Book> findAll();
 
-    void deleteById(Long id);
-
 }

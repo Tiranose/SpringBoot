@@ -2,27 +2,31 @@ package com.example.springboot.repository.impl;
 
 import com.example.springboot.model.Book;
 import com.example.springboot.repository.BookRepository;
-import java.util.ArrayList;
-import java.util.List;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
+import java.util.List;
 
 @Repository
 public class BookRepositoryImpl implements BookRepository {
-    private final List<Book> books = new ArrayList<>();
+
+    @PersistenceContext
+    private EntityManager entityManager;
 
     @Override
+    @Transactional
     public Book save(Book book) {
-        books.add(book);
-        return book;
+        if (book.getId() == null) {
+            entityManager.persist(book);
+            return book;
+        } else {
+            return entityManager.merge(book);
+        }
     }
 
     @Override
     public List<Book> findAll() {
-        return new ArrayList<>(books);
-    }
-
-    @Override
-    public void deleteById(Long id) {
-        books.removeIf(book -> book.getId().equals(id));
+        return entityManager.createQuery("SELECT b FROM Book b", Book.class).getResultList();
     }
 }
