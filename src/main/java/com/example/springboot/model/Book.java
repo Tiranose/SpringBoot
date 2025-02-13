@@ -4,11 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import java.math.BigDecimal;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.AllArgsConstructor;
-
-import java.math.BigDecimal;
 
 @Entity
 @Getter
@@ -25,5 +24,6 @@ public class Book {
     private String description;
     private String coverImage;
 
-    public Book() {}
+    public Book() {
+    }
 }
