@@ -106,10 +106,10 @@
                     <consoleOutput>true</consoleOutput>
                     <failsOnError>true</failsOnError>
                     <linkXRef>false</linkXRef>
-                    <sourceDirectories>src</sourceDirectories>
-                    <excludes>
-                        <exclude>target/generated-sources/annotations/**</exclude>
-                    </excludes>
+                    <sourceDirectories>
+                        <sourceDirectory>src/main/java</sourceDirectory>
+                        <sourceDirectory>src</sourceDirectory>
+                    </sourceDirectories>
                 </configuration>
             </plugin>
 
