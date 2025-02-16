@@ -106,7 +106,10 @@
                     <consoleOutput>true</consoleOutput>
                     <failsOnError>true</failsOnError>
                     <linkXRef>false</linkXRef>
-                    <excludes>target/generated-sources/annotations/**</excludes>
+                    <sourceDirectories>src</sourceDirectories>
+                    <excludes>
+                        <exclude>target/generated-sources/annotations/**</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
 
