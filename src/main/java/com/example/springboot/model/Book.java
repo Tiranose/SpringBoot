@@ -37,5 +37,6 @@ public class Book {
     @Column(nullable = false)
     private String coverImage;
 
-    public Book() {}
+    public Book() {
+    }
 }
