@@ -10,6 +10,6 @@ public interface BookService {
 
     BookDto getBookById(Long id);
 
-    BookDto save(CreateBookRequestDto bookDto);
+    BookDto createBook(CreateBookRequestDto bookDto);
 
 }
